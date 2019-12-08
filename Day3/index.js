@@ -15,7 +15,7 @@ module.exports = async function (context, req) {
                 processChanges(fileNames, 'mod', context, commitId);
             }
         });
-        context.log('pngs included: ' + context.bindings.outputBlob.length);
+        context.log('pngs included: ' + context.bindings.outputTable.length);
     }
 
     context.res = {
