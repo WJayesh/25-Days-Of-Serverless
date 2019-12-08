@@ -16,11 +16,10 @@
       "name": "res"
     },
     {
-
-      "type": "blob",
+      "type": "table",
       "direction": "out",
-      "name": "outputBlob",
-      "path": "png-container/",
+      "name": "outputTable",
+      "tableName": "pets",
       "connection": "AzureWebJobsStorage"
     }
   ]

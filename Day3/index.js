@@ -25,12 +25,15 @@ module.exports = async function (context, req) {
 };
 
 function processChanges(fileNames, commitType, context, commitId) {
-
     var inc = 0;
     fileNames.forEach(fileName => {
         if (fileName.endsWith('.png')) {
-            context.bindings.outputBlob = fileName;
+            context.bindings.outputTable.push({
+                PartitionKey: "Part01",
+                RowKey: commitId + commitType + inc++,
+                CommitType: commitType,
+                ImageURL: fileName
+            });
         }
-
     });
 }
